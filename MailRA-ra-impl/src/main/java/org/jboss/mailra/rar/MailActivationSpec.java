@@ -82,44 +82,44 @@ public class MailActivationSpec implements ActivationSpec, Serializable {
     /**
      * The mail store password
      */
-    @ConfigProperty
+    @ConfigProperty(confidential = true)
     private String password;
 
     /**
      * The new messages check delay in MS
      */
-//    @ConfigProperty
-    private long pollingInterval = 60000L;
+    @ConfigProperty
+    private Long pollingInterval = 60000L;
 
     /**
      * The maximum number of messages
      */
-//    @ConfigProperty
-    private int maxMessages = 1;
+    @ConfigProperty
+    private Integer maxMessages = 1;
 
     /**
      * Enable JavaMail debugging
      */
     @ConfigProperty
-    private Boolean debug;
+    private Boolean debug = false;
 
     /**
      * Flush - for pop3 flush the mailbox after checking
      */
-//    @ConfigProperty
-    private boolean flush = Boolean.TRUE;
+    @ConfigProperty
+    private Boolean flush = Boolean.TRUE;
 
     /**
      * Starttls - ssl
      */
-//    @ConfigProperty
-    private boolean starttls;
+    @ConfigProperty
+    private Boolean starttls = false;
 
     /**
      * The port
      */
-//    @ConfigProperty
-    private int port;
+    @ConfigProperty
+    private Integer port;
 
     /**
      * Constructor
@@ -295,7 +295,7 @@ public class MailActivationSpec implements ActivationSpec, Serializable {
      * @return The value
      */
     public int getPort() {
-        return port;
+        return port == null ? 0 : port;
     }
 
     /**
