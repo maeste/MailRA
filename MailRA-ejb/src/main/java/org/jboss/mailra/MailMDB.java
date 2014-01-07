@@ -20,7 +20,9 @@ import org.jboss.mailra.rar.MailListener;
     @ActivationConfigProperty(propertyName = "mailFolder", propertyValue = "capedwarf-test"),
     @ActivationConfigProperty(propertyName = "pollingInterval", propertyValue = "5000")
 })
-@ResourceAdapter(value = "MailRA.ear#MailRA-rar-1.0-SNAPSHOT.rar")
+//@ResourceAdapter(value = "MailRA.ear#MailRA-rar-1.0-SNAPSHOT.rar")
+//@ResourceAdapter(value = "MailRA-rar-1.0-SNAPSHOT.rar")
+@ResourceAdapter(value = "org.wildfly.mail.ra:main")
 public class MailMDB implements MailListener {
 
     @Override
